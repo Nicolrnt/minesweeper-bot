@@ -23,6 +23,12 @@ def flag_tile(driver, table, coord):
   action = ActionChains(driver)
   action.context_click(table[coord_to_id(coord)]['tile']).perform()
 
+# Mark Tile
+def mark_tile(driver, table, coord, is_clean):
+  flag_tile(driver, table, coord)
+  if (is_clean):
+    flag_tile(driver, table, coord)
+
 # Print Coord
 def print_coord(coord):
   print('> Tile : [' + str(coord[0]) + ', ' + str(coord[1]) + ']')
